@@ -52,9 +52,6 @@ img {
 }
 
 /*====== BACKGROUND ======*/
-/* .hero-index {
-  background: var(--background-index-hero-color);
-} */
 
 .footer {
   background: var(--background-footer-color);
@@ -164,12 +161,22 @@ img {
 
 /*====== NAVIGATION LIST LINK ======*/
 .current {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.143;
-  letter-spacing: 0.02em;
   color: var(--accent-color);
 }
+
+.current::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
 .navigation-list-link {
   font-weight: 500;
   line-height: 1.143;
@@ -177,6 +184,8 @@ img {
   color: var(--title-font);
   padding-top: 32px;
   padding-bottom: 32px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list-link:hover,
@@ -346,6 +355,7 @@ img {
 
 .customer-icon {
   fill: var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link {
@@ -357,6 +367,7 @@ img {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
@@ -427,44 +438,6 @@ img {
 
   cursor: pointer;
 }
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 370;
-}
-
-.project-list-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-
-.project-list-item:nth-child(n + 7) {
-  margin-bottom: 0;
-}
-
-.project-list-item {
-  margin-bottom: 30px;
-  width: 370px;
-}
-
-.project-info {
-  padding: 20px 24px;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-}
-
-.project-link {
-  display: block;
-  width: 370px;
-}
-
-.project-link:hover,
-.project-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 /*====== END HERO ======*/
 
 /*====== ADVANTAGES(index.html) ======*/
@@ -473,8 +446,6 @@ img {
   justify-content: center;
   width: 65px;
   height: 70px;
-  /* margin: 0;
-  padding: 0; */
 }
 
 .antenna {
@@ -600,6 +571,26 @@ img {
   margin-right: 30px;
 }
 
+.services-thumb {
+  position: relative;
+}
+.services-thumb-descr {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  padding: 27px 82px;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-lite);
+}
+
 /*====== END SERVICES ======*/
 
 /*====== TEAM ======*/
@@ -626,21 +617,22 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: var(--icons-color);
   border-radius: 50%;
   width: 44px;
   height: 44px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-media-icon {
   width: 20px;
   height: 20px;
+  fill: var(--icons-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-media-link:hover .social-media-icon,
 .social-media-link:focus .social-media-icon {
   fill: var(--main-lite);
-  background-color: var(--accent-color);
 }
 
 .team {
@@ -706,6 +698,43 @@ img {
 /*====== END TEAM ======*/
 
 /*====== PROJECT ======*/
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370;
+}
+
+.project-list-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.project-list-item:nth-child(n + 7) {
+  margin-bottom: 0;
+}
+
+.project-list-item {
+  margin-bottom: 30px;
+  width: 370px;
+}
+
+.project-info {
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.project-link {
+  display: block;
+  width: 370px;
+}
+
+.project-link:hover,
+.project-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .project-name {
   margin-bottom: 4px;
   font-weight: 700;
