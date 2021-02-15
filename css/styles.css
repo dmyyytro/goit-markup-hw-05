@@ -160,11 +160,11 @@ img {
 /*====== END HEADER ======*/
 
 /*====== NAVIGATION LIST LINK ======*/
-.current {
+/* .current {
   color: tomato;
-}
+} */
 
-.current::after {
+.navigation-list-link .current::after {
   content: "";
   display: block;
   position: absolute;
