@@ -160,9 +160,6 @@ img {
 /*====== END HEADER ======*/
 
 /*====== NAVIGATION LIST LINK ======*/
-/* .current {
-  color: tomato;
-} */
 
 .navigation-list-link .current::after {
   content: "";
@@ -322,6 +319,7 @@ img {
   text-transform: uppercase;
   color: var(--main-lite);
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .footer .social-media-link {
